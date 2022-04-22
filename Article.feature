@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: teste
+Funcionalidade: teste 01
 
 Cenário: teste
   Dado eu estou na tela "x"
