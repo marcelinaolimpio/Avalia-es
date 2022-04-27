@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Fórmula
+Feature: Fórmula
 
 Cenário: Fórmula 
       Dado o usuário estar navegando no "painel de controle" na tela "visão de escritório"
@@ -25,7 +25,7 @@ Cenário: Cadastro Inválido
 Exemplos:
           |exemplo|nome da fórmula |identificação do produto|unidade base|peso vivo|ganho de peso diário|adicionar insumo|Mensagem|
           |exemplo|crescimento|milho silagem|quilograma|320|1,20|Guaraná 50%|o somatório do percentual da fórmula precisa ser 100%|
- CEsquema de cenário:cadastrar com campos não preenchidos
+Cenário: Esquema  de cenário:cadastrar com campos não preenchidos
         Dado o usuário estar na tela "fórmula"  
         E tenha adicionado um "insumo"
         Quando o usuário não preenche o "<campo>" com "<valor>" 
@@ -41,7 +41,7 @@ Exemplos:
         | ganho de peso diário     |     |
         | adicionar insumo         |  X  |
 
-Canário: Cancelar Fórmula 
+Cenário: Cancelar Fórmula 
      Dado o usuário está na tela "fórmula"
      Quando preencheu os campos da "fórmula"
      E selecionou o botão "cancelar"
