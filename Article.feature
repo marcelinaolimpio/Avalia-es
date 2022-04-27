@@ -1,6 +1,5 @@
 #language: pt
 
-
 Funcionalidade: Fórmula
 
 Cenário: Fórmula 
