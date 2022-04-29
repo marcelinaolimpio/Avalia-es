@@ -1,55 +1,41 @@
-#language: pt
+@language: pt
 
-Feature: Fórmula
+Feature:Batida
 
-Cenário: Fórmula 
-      Dado o usuário estar navegando no "painel de controle" na tela "visão de escritório"
-      E selecionou a opção "nutrição"
-      Quando ele aciona o botão "fórmula"
-      Então é exibida a tela "fórmula"
-
-Cenário: Cadastro Válido 
-      Dado o usuário está na tela de "fórmula"
-      Quando preenche os seguintes campos
-        |nome da fórmula |identificação do produto|unidade base|peso vivo|ganho de peso diário|adicionar insumo|
-        |crescimento|milho silagem|Quilograma|320|1,20|Garaná 100%|
+Cenário:Batida 
+     Dado o usuário está em "painel de controle" na tela de "visão de escritório"
+     E selecionou a opção "Nutrição "
+     Quando ele aciona o botão "batida"
+     Então é exibida a tela "batida"
+Cenário:cadastro válido 
+      Dado o usuário está na tela de "Batida"
+      Quando preenche os seguintes campos 
+        |Nome da fórmula|Data da batida|Embalagem de saída|Estoque de origem|Estoque de destino|Quantidade|Responsável (planejamento)|Responsável (produção)|
       E acessa o botão "salvar novo"
-      Então o Cadastro da Fórmula é salvo
-
-Cenário: Cadastro Inválido 
-      Dado o usuário está na tela de "fórmula"
-      E preenche os seguintes campos com valores inválido 
-          |<nome do fórmula>|<identificação do produto>|<unidade base>|<peso vivo>|<ganho de peso diário>|<adicionar insumo>|
-      Quando ele acessa o botão "salvar novo"
-      Então o sistema retorna á "<mensagem>"
+      Então é salvo o cadastro da "Batida"
+Cenário:Cadastro Recusado
+      Dado o usuário está na tela de "Batida"
+      E não tenha cadastrado na tela "Fórmula" e "Fazenda"
+      Quando ele aciona o botão para selecionar os campos 
+      Então o sistema sem o arquivo dos dados recusa o "cadastro"
+Cenário:Esquema de cenário com valores não preenchido.
+      Dado o usuário está na tela de "batida"
+      Quando o usuário não preenche o "<campo>" com "<valor>"
+      E não seleciona um valor na "opção"
+      Então o usuário aciona "salvar novo"
+      Então o sistema sinaliza os campos deixando-os em vermelho.
 Exemplos:
-          |exemplo|nome da fórmula |identificação do produto|unidade base|peso vivo|ganho de peso diário|adicionar insumo|Mensagem|
-          |exemplo|crescimento|milho silagem|quilograma|320|1,20|Guaraná 50%|o somatório do percentual da fórmula precisa ser 100%|
-Cenário: Esquema  de cenário:cadastrar com campos não preenchidos
-        Dado o usuário estar na tela "fórmula"  
-        E tenha adicionado um "insumo"
-        Quando o usuário não preenche o "<campo>" com "<valor>" 
-        E não selecionar um valor na "opção"
-        Então o usuário aciona "salvar novo"
-        Então o sistema sinaliza os campos deixando-os em vermelho
- Exemplos:
-        | campo                    |valor|
-        | nome da fórmula          |     |
-        | identificação do produto |     |
-        | unidade base             |     |
-        | peso vivo                |     |
-        | ganho de peso diário     |     |
-        | adicionar insumo         |  X  |
-
-Cenário: Cancelar Fórmula 
-     Dado o usuário está na tela "fórmula"
-     Quando preencheu os campos da "fórmula"
-     E selecionou o botão "cancelar"
-     Então é cancelado o cadastro da fórmula.
-
-Cenário:Cadastro de embalagem
-     Dado o usuário está na tela de "fórmula"
-     E acessa o botão nova embalagem 
-     Quando preenche os seguintes campos
-             |nome embalagem|unidade de medida|Quantidade|
-     Então o cadastro da embalagem é efetuada.
+       |campo                      | valor |
+       |nome da fórmula            |       |
+       |data da batida             |       |
+       |embalagem de saída         |       |
+       |estoque de origem          |       |
+       |estoque de destino         |   X   |
+       |quantidade                 |       |
+       |responsável(planejamento)  |       |
+       |responsável(produção)      |       |
+Cenário:Cancelar Batida
+      Dado o usuário está na tela de "batida"
+      Quando o usuário já preencheu os campos em "batida"
+      E acessa o botão "cancelar"
+      Então é cancelado o cadastro da batida.
