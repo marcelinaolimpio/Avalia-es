@@ -36,6 +36,7 @@ Exemplos:
        |responsável(produção)      |       |
 Cenário:Cancelar Batida
       Dado o usuário está na tela de "batida"
-      Quando preenchidos os campos em "batida"
+      Quando preenchidos os seguintes campos 
+        |Nome da fórmula|Data da batida|Embalagem de saída|Estoque de origem|Estoque de destino|Quantidade|Responsável (planejamento)|Responsável (produção)|
       E aciona o botão "cancelar"
       Então é cancelado o cadastro da "batida".
