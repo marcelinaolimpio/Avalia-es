@@ -36,6 +36,6 @@ Exemplos:
        |responsável(produção)      |       |
 Cenário:Cancelar Batida
       Dado o usuário está na tela de "batida"
-      Quando o usuário já preencheu os campos em "batida"
-      E acessa o botão "cancelar"
-      Então é cancelado o cadastro da batida.
+      Quando preenchidos os campos em "batida"
+      E aciona o botão "cancelar"
+      Então é cancelado o cadastro da "batida".
