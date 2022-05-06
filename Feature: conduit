@@ -3,7 +3,7 @@
 Feature:Login para autenticação.
 
 Cenário:Acessar "sign in"
-     Dado o usuário está da tela do feed 
+     Dado o usuário está da tela do "feed"
      Quando aciona o botão "sing in"
      Então a tela para Logar é exibida.
 
@@ -27,7 +27,7 @@ Exemplos:
            |exemplo   |Mil@hormail.com|*****   |email or password os invalid|
 
 
-Cenário:Esquem de cenário com valores não preenchidos
+Cenário:Esquema de cenário com valores não preenchidos
        Dado o usuário está na tela "sign in"
        Quando não preenche os seguintes campos
           |<email>|<password>|
@@ -40,7 +40,7 @@ Exemplos:
            
 
 Cenário:Acessar "sign up"
-     Dado o usuário está da tela do feed 
+     Dado o usuário está da tela do "feed"
      Quando aciona o botão "sing up"
      Então a tela para cadastro é exibida.
 
