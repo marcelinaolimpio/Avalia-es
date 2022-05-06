@@ -32,7 +32,7 @@ Cenário:Esquem de cenário com valores não preenchidos
        Quando não preenche os seguintes campos
           |<email>|<password>|
        E clica no botão "sing in"
-       Então o sistema retorna a <mensagem>
+       Então o sistema retorna a "<mensagem>"
 Exemplos:
           |exemplos  |email          |password|mensagem|
           |exemplo 01|mil@hormail.com|        |password cat't be blank|
