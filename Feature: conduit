@@ -21,7 +21,7 @@ Cenário:Esquema de cenário com valores inválidos
        Quando preenche os seguintes campos com valores inválidos 
            |<email>|<password>|
        E clica no botão "sign in"
-       Então o sistema retorna a <mensagem>
+       Então o sistema retorna a "<mensagem>"
 Exemplos:
            |exemplos  |email          |password|mensagem|
            |exemplo   |Mil@hormail.com|*****   |email or password os invalid|
