@@ -8,7 +8,7 @@ Cenário:Acessar "sign in"
      Então a tela para Logar é exibida.
 
 
-Cenário:Proceder Login
+Cenário:Login válido 
       Dado o usuário está na tela "sign in"
       Quando preenche os seguintes campos
           |e-mail           |password|
@@ -16,6 +16,28 @@ Cenário:Proceder Login
       E clica no botão "sign in"
       Então o login é feito com sucesso.
 
+Cenário:Esquema de cenário com valores inválidos  
+       Dado o usuário está na tela "sign in"
+       Quando preenche os seguintes campos com valores inválidos 
+           |<email>|<password>|
+       E clica no botão "sign in"
+       Então o sistema retorna a <mensagem>
+Exemplos:
+           |exemplos  |email          |password|mensagem|
+           |exemplo   |Mil@hormail.com|*****   |email or password os invalid|
+
+
+Cenário:Esquem de cenário com valores não preenchidos
+       Dado o usuário está na tela "sign in"
+       Quando não preenche os seguintes campos
+          |<email>|<password>|
+       E clica no botão "sing in"
+       Então o sistema retorna a <mensagem>
+Exemplos:
+          |exemplos  |email          |password|mensagem|
+          |exemplo 01|mil@hormail.com|        |password cat't be blank|
+          |exemplo 02|               |******  |email cat't be blank   |
+           
 
 Cenário:Acessar "sign up"
      Dado o usuário está da tela do feed 
@@ -32,16 +54,16 @@ Cenário:cadastro válido
      Então o cadastro é concluído 
 
 
-Cenário:Cadastro inválido 
+Cenário:Esquema de cenário com valores inválido 
       Dado o usuário está na tela "sing up"
-      E preenche o seguinte "campo" com "valor" inválido
-           |campo   |valor     |
-           |username|mileide   |
-           |email   |milei@.com|
-           |password|*******   |
-      Quando clica no botão "sign up"
-      Então o sistema retorna a mensagem 
-           |email is being used incorrectly in ".com"|
+      E preenche os seguintes campos com valores inválidos 
+            |<username>|<email>|<password>|
+      E clica no botão "sing up"
+      Então o sistema retorna a "<mensagem>"
+Exemplos:
+            |exemplos  |username|email             |password|mensagem|
+            |exemplo 01|Mileide |mil@.com          |******* |email is being used incorrectly in ".com"|
+            |exemplo 02|t       |mil@hormail.com   |******* |username has already been taken|
 
 
 Cenário:Esquema de cenário com valores não preenchidos.
@@ -51,6 +73,7 @@ Cenário:Esquema de cenário com valores não preenchidos.
       E clica no botão "sing up"
       Então o sistema retorna a "<mensagem>"
  Exemplos:
-          |exemplos  |username|email                     |password|Mensagem|
+          |exemplos  |username|email                     |password|mensagem|
           |exemplo 01|Mileide |                          |******* |email can't be blank|
           |exemplo 02|        |mileidemarcelina@gmail.com|******* |username can't be blank|
+          |exemplo 03|Mileide |mileidemarcelina@gmail.com|        |password can't be blank|
